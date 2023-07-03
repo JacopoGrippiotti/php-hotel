@@ -57,7 +57,12 @@
             -
             <?php echo $hotel['description'].'';?>
             -
-            <?php echo $hotel['parking'].'';?>
+            <?php if($hotel['parking'] === true){
+                 echo "has parking"."";
+                 } 
+                 else{
+                    echo "no parking"."";
+                 };?>
             -
             <?php echo $hotel['vote'].'';?>
             -
