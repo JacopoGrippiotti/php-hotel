@@ -44,8 +44,28 @@
           $index = 0
           foreach($hotels as $hotel){?>
             <tr>
-              <th scope="row"><?php foreach($hotels as $key => $value){echo $key} ?></th>
+              <th scope="row"><?php echo  ?></th>
             </tr>
           <?php }?>
         </tbody>
       </table>
+
+
+
+
+
+      <ul>
+        <?php foreach($hotels as $hotel) { 
+            foreach($hotel as $key => $element){ ?>
+          <li>
+              <?php if($key != "parking"){
+                echo "$key-$element".'';
+                }else{
+                    if($element === true){
+                        echo "$key-true";
+                    }else{
+                        echo "$key-false";
+                    }
+                }?>
+          </li>
+        <?php } }?>

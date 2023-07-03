@@ -56,15 +56,19 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <?php foreach($hotels as $hotel){?>
-             <th><?php echo $hotel['name'];?></th>
-            <?php } ?>       
+            <?php $singleArray = array_keys($hotels[0]); foreach($singleArray as $key){?>
+             <th scope="col"><?php echo "$key" ;?></th>
+            <?php }?>       
           </tr>
         </thead>
         <tbody>
           <?php foreach($hotels as $hotel){?>
             <tr>
               <th scope="row"><?php echo array_search($hotel,$hotels);?></th>
+              <?php foreach($hotels as $hotel){
+                foreach($hotel as $key => $value){?>
+              <td><?php echo "$key-$value";?></td>
+              <?php }}?>
             </tr>
           <?php }?>
         </tbody>
