@@ -69,3 +69,16 @@
                 }?>
           </li>
         <?php } }?>
+
+
+
+
+        <?php foreach($hotels as $hotel){?>
+            <tr>
+              <th scope="row"><?php echo array_search($hotel,$hotels);?></th>
+              <?php foreach($hotels as $hotel){
+                foreach($hotel as $key => $value){?>
+              <td><?php echo "$key-$value";?></td>
+              <?php }}?>
+            </tr>
+          <?php }?>

@@ -52,25 +52,30 @@
     <title>Document</title>
  </head>
  <body>
-    <table class="table">
+    <table class="table m-auto">
         <thead>
           <tr>
             <th scope="col">#</th>
             <?php $singleArray = array_keys($hotels[0]); foreach($singleArray as $key){?>
-             <th scope="col"><?php echo "$key" ;?></th>
+             <th scope="col"><?php echo "$key";?></th>
             <?php }?>       
           </tr>
         </thead>
         <tbody>
-          <?php foreach($hotels as $hotel){?>
+        <?php foreach($hotels as $hotel){?>
             <tr>
-              <th scope="row"><?php echo array_search($hotel,$hotels);?></th>
-              <?php foreach($hotels as $hotel){
-                foreach($hotel as $key => $value){?>
-              <td><?php echo "$key-$value";?></td>
-              <?php }}?>
+              <th scope="row"><?php echo array_search($hotel,$hotels)?></th>
+              <?php foreach($hotel as $property){?>
+              <td><?php if(is_bool($property) === false ){
+                echo $property;
+                }elseif($property === true){
+                  echo "parking allowed";
+                }else{
+                  echo "parking not allowed";
+                }?></td>
+              <?php }?>   
             </tr>
-          <?php }?>
+        <?php }?>
         </tbody>
     </table>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
