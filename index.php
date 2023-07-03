@@ -64,7 +64,7 @@
         <tbody>
           <?php foreach($hotels as $hotel){?>
             <tr>
-              <th scope="row"><?php foreach($hotels as $key => $value){echo $key;} ?></th>
+              <th scope="row"><?php echo array_search($hotel,$hotels);?></th>
             </tr>
           <?php }?>
         </tbody>
