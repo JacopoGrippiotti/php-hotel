@@ -44,32 +44,32 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-</head>
-<body>
-    <ul>
-      <?php foreach($hotels as $hotel) { ?>
-        <li>
-            <?php echo $hotel['name'].'';?>
-            -
-            <?php echo $hotel['description'].'';?>
-            -
-            <?php if($hotel['parking'] === true){
-                 echo "has parking";
-                 } else {
-                    echo "no parking";
-                 };?>
-            -
-            <?php echo $hotel['vote'].'';?>
-            -
-            <?php echo $hotel['distance_to_center'].'';?>
-        </li>
-      <?php }?>
-    </ul>
-</body>
+ </head>
+ <body>
+    <div class="container" >
+     <ul>
+        <?php foreach($hotels as $hotel) { 
+            foreach($hotel as $key => $element){ ?>
+          <li>
+              <?php if($key != "parking"){
+                echo "$key-$element".'';
+                }else{
+                    if($element === true){
+                        echo "$key-true";
+                    }else{
+                        echo "$key-false";
+                    }
+                };?>
+          </li>
+        <?php } }?>
+     </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ </body>
 </html>
