@@ -29,3 +29,23 @@
           </li>
         <?php }?>
       </ul>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <?php foreach($hotels as $hotel){?>
+             <th><?php echo $hotel['name'];?></th>
+            <?php } ?>       
+          </tr>
+        </thead>
+        <tbody>
+          <?php 
+          $index = 0
+          foreach($hotels as $hotel){?>
+            <tr>
+              <th scope="row"><?php foreach($hotels as $key => $value){echo $key} ?></th>
+            </tr>
+          <?php }?>
+        </tbody>
+      </table>

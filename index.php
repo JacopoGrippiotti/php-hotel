@@ -52,24 +52,23 @@
     <title>Document</title>
  </head>
  <body>
-    <div class="container" >
-     <ul>
-        <?php foreach($hotels as $hotel) { 
-            foreach($hotel as $key => $element){ ?>
-          <li>
-              <?php if($key != "parking"){
-                echo "$key-$element".'';
-                }else{
-                    if($element === true){
-                        echo "$key-true";
-                    }else{
-                        echo "$key-false";
-                    }
-                };?>
-          </li>
-        <?php } }?>
-     </ul>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <?php foreach($hotels as $hotel){?>
+             <th><?php echo $hotel['name'];?></th>
+            <?php } ?>       
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($hotels as $hotel){?>
+            <tr>
+              <th scope="row"><?php foreach($hotels as $key => $value){echo $key;} ?></th>
+            </tr>
+          <?php }?>
+        </tbody>
+    </table>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
  </body>
 </html>
